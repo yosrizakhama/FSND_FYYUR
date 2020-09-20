@@ -1,0 +1,1231 @@
+
+2020-09-19 21:38:40,910 INFO: errors [in C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py:611]
+2020-09-19 21:38:55,118 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:38:57,174 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:38:57,946 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:39:00,019 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:39:01,904 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:39:47,274 INFO: errors [in C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py:611]
+2020-09-19 21:39:52,096 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:39:55,220 ERROR: Exception on /venues [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: City
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 75, in venues
+    data_b=City.query.all()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3346, in all
+    return list(self)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: City
+[SQL: SELECT "City".id AS "City_id", "City".city AS "City_city", "City".state AS "City_state" 
+FROM "City"]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:39:57,298 ERROR: Exception on /artists [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 347, in artists
+    data=Artist.query.all()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3346, in all
+    return list(self)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist"]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:39:58,524 ERROR: Exception on /shows [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Show
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 555, in shows
+    data_show=db.session.query(Show).all()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3346, in all
+    return list(self)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Show
+[SQL: SELECT "Show".start_time AS "Show_start_time", "Show".artist_id AS "Show_artist_id", "Show".venue_id AS "Show_venue_id" 
+FROM "Show"]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:39:59,891 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:40:41,010 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:40:43,433 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:40:44,621 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:40:59,465 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:41:02,084 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:41:11,121 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:41:12,201 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:43:56,377 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:44:08,312 INFO: errors [in C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py:611]
+2020-09-19 21:44:12,985 ERROR: Exception on / [GET] [in C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: Artist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py", line 64, in index
+    return render_template('pages/home.html',artists=artists,venues=venues)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\layouts\main.html", line 105, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\templates\pages\home.html", line 93, in block "content"
+    {%for a in artists%}
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: Artist
+[SQL: SELECT "Artist".id AS "Artist_id", "Artist".name AS "Artist_name", "Artist".city_id AS "Artist_city_id", "Artist".phone AS "Artist_phone", "Artist".image_link AS "Artist_image_link", "Artist".facebook_link AS "Artist_facebook_link", "Artist".website_link AS "Artist_website_link", "Artist".seeking_venue AS "Artist_seeking_venue", "Artist".seeking_description AS "Artist_seeking_description", "Artist".datecreate AS "Artist_datecreate" 
+FROM "Artist" ORDER BY "Artist".datecreate DESC
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-09-19 21:47:16,580 INFO: errors [in C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py:611]
+2020-09-19 22:00:35,769 INFO: errors [in C:\FSND Full Stack Nano Degree\FSND-master - Copie\FSND-master\projects\01_fyyur\FyyurMyWork\app.py:611]

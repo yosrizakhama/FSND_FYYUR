@@ -1,0 +1,44 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur | Venues{% endblock %}
+{% block content %}
+<style media="screen">
+	#search{
+		position:fixed;
+		right:0;
+	}
+</style>
+<div id="search">
+	<label for="city">Choose a city:</label>
+	<select name="city" id="city" onchange="myFunction()">
+		{% for c in city %}
+			<option value="{{c.id}}">{{c.city}} ,{{c.state}}</option>
+		{% endfor %}
+	</select>
+	<button type="button" name="button" class="btn-success" ><a id='link' href="/venues/searchcity/{{city[0].id}}">SEARCH</a></button>
+</div>
+
+{% for area in areas %}
+<h3>{{ area.city }}, {{ area.state }}</h3>
+	<ul class="items">
+		{% for venue in area.venues %}
+		<li>
+			<a href="/venues/{{ venue.id }}">
+				<i class="fas fa-music"></i>
+				<div class="item">
+					<h5>{{ venue.name }}</h5>
+				</div>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+{% endfor %}
+<script type="text/javascript">
+
+
+	function myFunction() {
+		id=document.getElementById("city").value
+		console.log(id)
+		document.getElementById("link").setAttribute("href","/venues/searchcity/"+id)
+	}
+</script>
+{% endblock %}

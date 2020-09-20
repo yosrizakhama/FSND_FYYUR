@@ -1,0 +1,116 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur{% endblock %}
+{% block content %}
+<style media="screen">
+  .recent{
+    display: inline-block;
+
+    background: rgba(255,200,0,0.8);
+    color: black;
+    border:3px solid #777;
+    border-radius: 7px;
+    font-weight: bold;
+    padding:0;
+
+  }
+  .title{
+    display:inline-block;
+    color: red;
+    background: white;
+    text-align:center;
+    width:100%;
+
+  }
+  h4{
+    font-size:1.5em;
+  }
+  .top{
+    display: flex ;
+    width: 50%;
+    margin: 0px auto;
+    float:left;
+    position:relatif;
+		right:0;
+    buttom:0;
+  }
+  .top div{
+    margin:0 auto;
+  }
+  .ul{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction:column;
+    margin:0;}
+
+   .li{
+     display:flex;
+     margin:0 auto;
+     flex-wrap: wrap;
+     width:100%;
+   }
+   .ind{
+     border:solid 2px white;
+     width:50%;
+     padding:5px;
+     margin:auto;
+     text-align:center;
+   }
+
+</style>
+
+<div class="row">
+	<div class="col-sm-6">
+		<h1>Fyyur 🔥</h1>
+		<p class="lead">Where musical artists meet musical venues.</p>
+
+		<h3>
+			<a href="/venues"><button class="btn btn-primary btn-lg">Find a venue</button></a>
+			<a href="/venues/create"><button class="btn btn-default btn-lg">Post a venue</button></a>
+		</h3>
+		<h3>
+			<a href="/artists"><button class="btn btn-primary btn-lg">Find an artist</button></a>
+			<a href="/artists/create"><button class="btn btn-default btn-lg">Post an artist</button></a>
+		</h3>
+		<p class="lead">Publicize about your show for free.</p>
+		<h3>
+			<a href="/shows/create"><button class="btn btn-default btn-lg">Post a show</button></a>
+		</h3>
+	</div>
+	<div class="col-sm-6 hidden-sm hidden-xs">
+
+		<img id="front-splash" src="{{ url_for('static',filename='img/front-splash.jpg') }}" alt="Front Photo of Musical Band" />
+	</div>
+
+
+</div>
+<div class="top">
+  <div id="recentartist" class="recent">
+    <div class="title">
+      <h4>Most 10 recents artists</h4>
+    </div>
+    <div class="ul">
+
+        {%for a in artists%}
+        <div class="li">
+          <div class="ind">ID: {{a['id']}}</div><div class="ind">Name: {{a['name']}}</div>
+        </div>
+        {%endfor%}
+    </div>
+  </div>
+  <div id="recentvevue" class="recent">
+    <div class="title">
+      <h4>Most 10 recents venues</h4>
+    </div>
+    <div class="ul">
+
+        {%for v in venues%}
+        <div class="li">
+          <div class="ind">ID: {{v['id']}}</div><div class="ind">Name: {{v['name']}}</div>
+        </div>
+
+        {%endfor%}
+    </div>
+
+  </div>
+</div>
+{% endblock %}

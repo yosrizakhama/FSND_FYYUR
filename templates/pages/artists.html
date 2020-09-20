@@ -1,0 +1,46 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur | Artists{% endblock %}
+{% block content %}
+
+<style media="screen">
+	#search{
+		position:fixed;
+		right:0;
+	}
+</style>
+<div id="search">
+	<label for="city">Choose a city:</label>
+	<select name="city" id="city" onchange="myFunction()">
+		{% for c in city %}
+			<option value="{{c.id}}">{{c.city}} ,{{c.state}}</option>
+		{% endfor %}
+	</select>
+	<button type="button" name="button" class="btn-success" ><a id='link' href="/artists/searchcity/{{city[0].id}}">SEARCH</a></button>
+</div>
+
+<ul class="items">
+	{% for artist in artists %}
+	<li>
+		<a href="/artists/{{ artist.id }}">
+			<i class="fas fa-users"></i>
+			<div class="item">
+				<h5>{{ artist.name }}</h5>
+			</div>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+<script type="text/javascript">
+
+
+	function myFunction() {
+		id=document.getElementById("city").value
+		console.log(id)
+		document.getElementById("link").setAttribute("href","/artists/searchcity/"+id)
+	}
+
+
+
+</script>
+
+{% endblock %}
